@@ -1,0 +1,87 @@
+.cart {
+  width: 45%;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #D7CCC8;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 15px;
+  align-content: center
+}
+
+.cart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.cart-card {
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #BCAAA4;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.cart-card:hover {
+  transform: scale(1.05);
+}
+
+.cart-card p {
+  margin: 5px 0;
+}
+
+.cart-card button {
+  padding: 5px 8px;
+  border: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+  margin: 0.1rem;
+}
+
+/* Botões */
+.cart-card button:first-of-type {
+  background-color: #6D8B74;
+  color: white;
+}
+
+.cart-card button:first-of-type:hover {
+  background-color: #58715D;
+}
+
+.cart-card button:nth-of-type(2) {
+  background-color: #D9A441;
+  color: black;
+}
+
+.cart-card button:nth-of-type(2):hover {
+  background-color: #B7862E;
+}
+
+.cart-card button:last-of-type {
+  background-color: #A0413B;
+  color: white;
+}
+
+.cart-card button:last-of-type:hover {
+  background-color: #812E28;
+}
+
+.cart-total {
+  text-align: right;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
