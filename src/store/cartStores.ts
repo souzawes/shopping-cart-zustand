@@ -64,18 +64,20 @@ const useCartStore = create<CartStore>((set) => ({
     totalQuantity: state.totalQuantity + 1
   })),
 
+  decreaseProductQuantity: (product: Product) => set((state) => {
+    return {
+      cartProducts: state.cartProducts
+        .map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity - 1, itemsPrice: item.itemsPrice - product.price }
+            : item
+        )
+        .filter((item) => item.quantity > 0),
 
-  decreaseProductQuantity: (product: Product) => set((state) => ({
-    cartProducts: state.cartProducts
-      .map((item) =>
-        item.id === product.id && item.quantity > 1
-          ? { ...item, quantity: item.quantity - 1, itemsPrice: item.itemsPrice - product.price }
-          : item
-      )
-      .filter((item) => item.quantity > 0),
-    totalPrice: state.totalPrice - product.price,
-    totalQuantity: state.totalQuantity - 1
-  })),
+      totalPrice: state.totalPrice - product.price,
+      totalQuantity: state.totalQuantity - 1
+    };
+  }),
 
 
 }))
